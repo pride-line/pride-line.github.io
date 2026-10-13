@@ -659,6 +659,23 @@ svg.icon, .logo__crown { fill: none; stroke: currentColor; stroke-width: 1.7; st
   .team { width: 44px; height: 44px; font-size: 11px; }
 }
 
+/* ---------- partners ---------- */
+.partners { background: linear-gradient(180deg, var(--bg), #0a0a0d 45%, var(--bg)); }
+.partners__steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 2vw, 24px); margin-bottom: clamp(24px, 3vw, 40px); }
+.partners__steps li { position: relative; border: 1px solid var(--line); border-radius: 16px; padding: clamp(22px, 2.6vw, 30px); background: linear-gradient(165deg, var(--panel), #0b0b0e); }
+.partners__num { position: absolute; top: 18px; right: 20px; font-family: var(--font-display); font-size: 13px; color: var(--gold); }
+.partners__steps h3 { font-size: clamp(15px, 1.6vw, 18px); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 10px; padding-right: 44px; }
+.partners__steps p { color: var(--muted); font-size: 14px; }
+.partners__why { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 2.4vw, 28px); margin-bottom: clamp(28px, 3.4vw, 44px); }
+.partners__why article { border: 1px solid var(--line-soft); border-radius: 16px; padding: clamp(22px, 2.6vw, 32px); background: rgba(255, 255, 255, .015); }
+.partners__why h3 { font-size: clamp(14px, 1.5vw, 17px); letter-spacing: .12em; text-transform: uppercase; color: var(--gold-2); margin-bottom: 14px; font-weight: 400; }
+.partners__why ul { display: flex; flex-direction: column; gap: 10px; }
+.partners__why li { position: relative; padding-left: 20px; color: var(--muted); font-size: 14px; }
+.partners__why li::before { content: ''; position: absolute; left: 0; top: .66em; width: 10px; height: 1px; background: var(--gold); }
+.partners__cta { display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
+.partners__note { font-size: 12.5px; color: var(--dim); letter-spacing: .04em; }
+@media (max-width: 860px) { .partners__steps, .partners__why { grid-template-columns: 1fr; } }
+
 /* ---------- trust & conversion additions ---------- */
 .hero__trust { max-width: 470px; margin: 0 0 26px; font-size: 12.5px; line-height: 1.6; color: var(--dim); letter-spacing: .02em; }
 .scenarios__arg { display: block; margin-top: 6px; font-style: normal; font-size: 12.5px; color: var(--dim); }

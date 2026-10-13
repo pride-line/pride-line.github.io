@@ -182,3 +182,19 @@
     }
   }, true);
 })();
+
+/* ---------- traffer attribution: ?t=trf_xxx подставляется в ссылки бота ---------- */
+(function () {
+  'use strict';
+  var m = location.search.match(/[?&]ref=(ref_[0-9]{1,10})/i) || location.search.match(/[?&]t=(trf_[a-z0-9]{1,12})/i);
+  if (!m) return;
+  var code = m[1];
+  var fix = function () {
+    document.querySelectorAll('a[href*="t.me/PrideLine1GateBot"]').forEach(function (a) {
+      if (a.href.indexOf('start=') > -1) return;
+      a.href = a.href + (a.href.indexOf('?') > -1 ? '&' : '?') + 'start=' + code;
+    });
+  };
+  fix();
+  document.addEventListener('DOMContentLoaded', fix);
+})();
