@@ -726,7 +726,13 @@ svg.icon, .logo__crown { fill: none; stroke: currentColor; stroke-width: 1.7; st
 .alt-routes__info h3 { font-size: clamp(14px, 1.6vw, 18px); letter-spacing: .1em; text-transform: uppercase; color: var(--silver); font-weight: 400; }
 .alt-routes__info p { margin-top: 8px; font-size: 13px; color: var(--dim); max-width: 460px; }
 .alt-routes__actions { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; flex: none; }
-@media (max-width: 760px) { .alt-routes { flex-direction: column; align-items: flex-start; } }
+@media (max-width: 760px) {
+  .alt-routes { flex-direction: column; align-items: stretch; }
+  .alt-routes__actions { width: 100%; align-items: stretch; }
+  /* длинные подписи кнопок на узких экранах переносятся, а не уезжают вправо */
+  .alt-routes__actions .btn { white-space: normal; width: 100%; min-width: 0; }
+  .alt-routes__actions .link-arrow { white-space: normal; }
+}
 .mobile-cta {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
   display: none; flex-direction: column; gap: 6px;
