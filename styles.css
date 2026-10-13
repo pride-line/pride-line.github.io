@@ -139,6 +139,7 @@ svg.icon, .logo__crown { fill: none; stroke: currentColor; stroke-width: 1.7; st
 .nav__link {
   font-size: 12px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
   color: var(--muted); padding: 8px 2px; position: relative; transition: color .25s;
+  white-space: nowrap;
 }
 .nav__link::after {
   content: ''; position: absolute; left: 0; right: 100%; bottom: 2px; height: 1px;
@@ -521,6 +522,23 @@ svg.icon, .logo__crown { fill: none; stroke: currentColor; stroke-width: 1.7; st
 .free__text { color: var(--muted); max-width: 480px; }
 .free__cta { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
 .free__note { font-size: 12.5px; color: var(--dim); letter-spacing: .04em; }
+.hero__badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin: 16px 0 6px; padding: 9px 18px;
+  border: 1px solid var(--line-strong); border-radius: 999px;
+  background: linear-gradient(180deg, rgba(212, 178, 102, .14), rgba(212, 178, 102, .05));
+  font-family: var(--font-display); font-size: 12px; font-weight: 500;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--gold-2);
+  box-shadow: 0 0 24px rgba(212, 178, 102, .12);
+}
+.free__steps { list-style: none; margin: 20px 0 0; padding: 0; display: grid; gap: 11px; }
+.free__steps li { display: flex; gap: 12px; align-items: baseline; color: var(--muted); font-size: 14.5px; line-height: 1.5; }
+.free__steps b {
+  flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center;
+  width: 24px; height: 24px; border-radius: 50%;
+  border: 1px solid var(--line-strong); color: var(--gold);
+  font-family: var(--font-display); font-size: 11px; font-weight: 500; transform: translateY(4px);
+}
 
 /* ---------- access / journey ---------- */
 .journey { display: flex; flex-direction: column; gap: 14px; position: relative; max-width: 860px; }
