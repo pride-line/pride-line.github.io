@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRIDE LINE | Sports Intelligence</title>
     <style>
-        /* === БАЗОВЫЕ СТИЛИ PRIDE LINE === */
+        /* === ТВОЙ ТЕКУЩИЙ СТИЛЬ (СОХРАНЕН) === */
         :root {
             --gold: #d4af37;
             --gold-light: #f3e5ab;
@@ -15,12 +15,8 @@
             --white: #ffffff;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--black);
@@ -29,293 +25,57 @@
             overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* === ШАПКА === */
-        header {
-            padding: 40px 0;
-            text-align: center;
-            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
-        }
+        header { padding: 40px 0; text-align: center; background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, transparent 70%); }
+        .logo-text { font-size: 2.5rem; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; font-weight: 700; }
+        .tagline { font-size: 0.9rem; letter-spacing: 2px; color: var(--text-gray); text-transform: uppercase; }
 
-        .logo-text {
-            font-size: 2.5rem;
-            letter-spacing: 4px;
-            color: var(--gold);
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
+        .hero { padding: 60px 0; text-align: center; }
+        .hero h1 { font-size: 3rem; color: var(--gold); margin-bottom: 20px; text-transform: uppercase; }
+        .hero p { font-size: 1.2rem; color: var(--text-gray); max-width: 800px; margin: 0 auto 40px; }
 
-        .tagline {
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            color: var(--text-gray);
-            text-transform: uppercase;
-        }
+        .features { display: flex; justify-content: center; gap: 40px; margin-top: 40px; flex-wrap: wrap; }
+        .feature-item { text-align: center; width: 200px; }
+        .feature-icon { font-size: 2rem; color: var(--gold); margin-bottom: 10px; }
+        .feature-title { font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; color: var(--white); }
 
-        /* === ПРИВЕТСТВЕННЫЙ БЛОК === */
-        .hero {
-            padding: 60px 0;
-            text-align: center;
-        }
+        .sports-section { padding: 60px 0; text-align: center; }
+        .section-title { font-size: 1.5rem; letter-spacing: 3px; color: var(--gold); margin-bottom: 40px; text-transform: uppercase; position: relative; display: inline-block; }
+        .section-title::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
 
-        .hero h1 {
-            font-size: 3rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
+        .sports-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .sport-card { background: var(--dark-gray); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 12px; padding: 30px 20px; width: 160px; transition: all 0.3s ease; cursor: pointer; }
+        .sport-card:hover { border-color: var(--gold); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1); }
+        .sport-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .sport-name { font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; color: var(--text-gray); }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            max-width: 800px;
-            margin: 0 auto 40px;
-        }
+        footer { padding: 40px 0; text-align: center; border-top: 1px solid rgba(212, 175, 55, 0.1); margin-top: 60px; }
+        .footer-text { font-size: 0.8rem; color: var(--text-gray); letter-spacing: 1px; }
+        .disclaimer { font-size: 0.7rem; color: #666; margin-top: 10px; }
 
-        .features {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .feature-item {
-            text-align: center;
-            width: 200px;
-        }
-
-        .feature-icon {
-            font-size: 2rem;
-            color: var(--gold);
-            margin-bottom: 10px;
-        }
-
-        .feature-title {
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--white);
-        }
-
-        /* === НАПРАВЛЕНИЯ === */
-        .sports-section {
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            letter-spacing: 3px;
-            color: var(--gold);
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        }
-
-        .sports-grid {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .sport-card {
-            background: var(--dark-gray);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 12px;
-            padding: 30px 20px;
-            width: 160px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .sport-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
-        }
-
-        .sport-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .sport-name {
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--text-gray);
-        }
-
-        /* === БЛОК ОТЗЫВОВ (КАРУСЕЛЬ) === */
-        .reviews-section {
-            padding: 80px 0;
-            background: linear-gradient(to bottom, var(--black), #050505);
-            position: relative;
-        }
-
-        .reviews-carousel {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            padding: 20px 0 40px;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none;  /* IE and Edge */
-        }
-
-        .reviews-carousel::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
-        }
-
-        .review-card {
-            flex: 0 0 100%;
-            max-width: 100%;
-            min-height: 280px;
-            background: linear-gradient(145deg, #111111, #0f0f0f);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            border-radius: 12px;
-            padding: 30px;
-            scroll-snap-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        @media (min-width: 768px) {
-            .review-card {
-                flex: 0 0 calc(50% - 10px);
-                max-width: calc(50% - 10px);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .review-card {
-                flex: 0 0 calc(33.333% - 14px);
-                max-width: calc(33.333% - 14px);
-            }
-        }
-
-        .review-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(212, 175, 55, 0.4);
-        }
-
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .review-id {
-            color: var(--gold);
-            font-weight: 700;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-        }
-
-        .stars {
-            color: var(--gold);
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-        }
-
-        .review-text {
-            color: #e0e0e0;
-            font-size: 1rem;
-            line-height: 1.6;
-            font-style: italic;
-            margin: 0;
-        }
-
-        .carousel-controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .nav-btn {
-            background: transparent;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            color: var(--gold);
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .nav-btn:hover {
-            background: rgba(212, 175, 55, 0.1);
-            border-color: var(--gold);
-        }
-
-        .dots {
-            display: flex;
-            gap: 8px;
-        }
-
-        .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(212, 175, 55, 0.2);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .dot.active {
-            background: var(--gold);
-            transform: scale(1.2);
-        }
-
-        /* === ФУТЕР === */
-        footer {
-            padding: 40px 0;
-            text-align: center;
-            border-top: 1px solid rgba(212, 175, 55, 0.1);
-            margin-top: 60px;
-        }
-
-        .footer-text {
-            font-size: 0.8rem;
-            color: var(--text-gray);
-            letter-spacing: 1px;
-        }
-
-        .disclaimer {
-            font-size: 0.7rem;
-            color: #666;
-            margin-top: 10px;
-        }
+        /* === НОВЫЙ БЛОК ОТЗЫВОВ (ДОБАВЛЕН В КОНЕЦ) === */
+        .reviews-section { padding: 80px 0; background: linear-gradient(to bottom, var(--black), #050505); position: relative; }
+        .reviews-carousel { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 20px 0 40px; scrollbar-width: none; -ms-overflow-style: none; }
+        .reviews-carousel::-webkit-scrollbar { display: none; }
+        
+        .review-card { flex: 0 0 100%; max-width: 100%; min-height: 280px; background: linear-gradient(145deg, #111111, #0f0f0f); border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 12px; padding: 30px; scroll-snap-align: center; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease, border-color 0.3s ease; }
+        
+        @media (min-width: 768px) { .review-card { flex: 0 0 calc(50% - 10px); max-width: calc(50% - 10px); } }
+        @media (min-width: 1024px) { .review-card { flex: 0 0 calc(33.333% - 14px); max-width: calc(33.333% - 14px); } }
+        
+        .review-card:hover { transform: translateY(-5px); border-color: rgba(212, 175, 55, 0.4); }
+        .review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .review-id { color: var(--gold); font-weight: 700; font-size: 1.1rem; letter-spacing: 1px; }
+        .stars { color: var(--gold); font-size: 1.2rem; letter-spacing: 2px; }
+        .review-text { color: #e0e0e0; font-size: 1rem; line-height: 1.6; font-style: italic; margin: 0; }
+        
+        .carousel-controls { display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 20px; }
+        .nav-btn { background: transparent; border: 1px solid rgba(212, 175, 55, 0.3); color: var(--gold); width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+        .nav-btn:hover { background: rgba(212, 175, 55, 0.1); border-color: var(--gold); }
+        .dots { display: flex; gap: 8px; }
+        .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(212, 175, 55, 0.2); cursor: pointer; transition: all 0.3s ease; }
+        .dot.active { background: var(--gold); transform: scale(1.2); }
     </style>
 </head>
 <body>
@@ -324,28 +84,28 @@
     <header>
         <div class="container">
             <div class="logo-text">PRIDE LINE</div>
-            <div class="tagline">Больше, чем просто комьюнити</div>
+            <div class="tagline">БОЛЬШЕ, ЧЕМ ПРОСТО КОМЬЮНИТИ</div>
         </div>
     </header>
 
     <!-- ПРИВЕТСТВИЕ -->
     <section class="hero">
         <div class="container">
-            <h1>Привет! Рад, что ты здесь</h1>
+            <h1>ПРИВЕТ! РАД, ЧТО ТЫ ЗДЕСЬ</h1>
             <p>Этот бот — твой доступ к профессиональной спортивной аналитике. Здесь ты найдёшь подробные разборы матчей, аналитические материалы и полезную информацию.</p>
             
             <div class="features">
                 <div class="feature-item">
                     <div class="feature-icon">◎</div>
-                    <div class="feature-title">Глубокий анализ</div>
+                    <div class="feature-title">ГЛУБОКИЙ АНАЛИЗ</div>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">🛡️</div>
-                    <div class="feature-title">Системный подход</div>
+                    <div class="feature-title">СИСТЕМНЫЙ ПОДХОД</div>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">📊</div>
-                    <div class="feature-title">Продуманные решения</div>
+                    <div class="feature-icon"></div>
+                    <div class="feature-title">ПРОДУМАННЫЕ РЕШЕНИЯ</div>
                 </div>
             </div>
         </div>
@@ -354,98 +114,49 @@
     <!-- НАПРАВЛЕНИЯ -->
     <section class="sports-section">
         <div class="container">
-            <h2 class="section-title">Наши направления</h2>
+            <h2 class="section-title">НАШИ НАПРАВЛЕНИЯ</h2>
             <div class="sports-grid">
-                <div class="sport-card">
-                    <div class="sport-icon"></div>
-                    <div class="sport-name">Футбол</div>
-                </div>
-                <div class="sport-card">
-                    <div class="sport-icon">🎾</div>
-                    <div class="sport-name">Теннис</div>
-                </div>
-                <div class="sport-card">
-                    <div class="sport-icon">🎮</div>
-                    <div class="sport-name">Кибер ФИФА</div>
-                </div>
-                <div class="sport-card">
-                    <div class="sport-icon">🏀</div>
-                    <div class="sport-name">Баскетбол</div>
-                </div>
-                <div class="sport-card">
-                    <div class="sport-icon">🏒</div>
-                    <div class="sport-name">Хоккей</div>
-                </div>
+                <div class="sport-card"><div class="sport-icon">⚽</div><div class="sport-name">ФУТБОЛ</div></div>
+                <div class="sport-card"><div class="sport-icon">🎾</div><div class="sport-name">ТЕННИС</div></div>
+                <div class="sport-card"><div class="sport-icon">🎮</div><div class="sport-name">КИБЕР ФИФА</div></div>
+                <div class="sport-card"><div class="sport-icon">🏀</div><div class="sport-name">БАСКЕТБОЛ</div></div>
+                <div class="sport-card"><div class="sport-icon">🏒</div><div class="sport-name">ХОККЕЙ</div></div>
             </div>
         </div>
     </section>
 
-    <!-- БЛОК ОТЗЫВОВ (КАРУСЕЛЬ) -->
+    <!-- БЛОК ОТЗЫВОВ (НОВЫЙ) -->
     <section class="reviews-section">
         <div class="container">
-            <h2 class="section-title">Отзывы участников</h2>
+            <h2 class="section-title">ОТЗЫВЫ УЧАСТНИКОВ</h2>
             
             <div class="reviews-carousel">
-                <!-- Отзыв 1 -->
                 <div class="review-card">
-                    <div class="review-header">
-                        <span class="review-id">#01</span>
-                        <div class="stars">★★★★★</div>
-                    </div>
+                    <div class="review-header"><span class="review-id">#01</span><div class="stars">★★★★★</div></div>
                     <p class="review-text">«Вот честно, уже надоело искать нормальную аналитику среди каналов, где каждый второй обещает золотые горы. Здесь хотя бы есть разбор, аргументы и понимание, откуда берётся вывод. Именно такого подхода мне и не хватало».</p>
                 </div>
-
-                <!-- Отзыв 2 -->
                 <div class="review-card">
-                    <div class="review-header">
-                        <span class="review-id">#02</span>
-                        <div class="stars">★★★★★</div>
-                    </div>
+                    <div class="review-header"><span class="review-id">#02</span><div class="stars">★★★★★</div></div>
                     <p class="review-text">«Ребята вы лучшие! Наконец-то не надо сидеть полвечера и собирать инфу по десяти местам 😅 Открыл разбор, посмотрел, что к чему, дальше уже сам думаешь. Для меня это удобно».</p>
                 </div>
-
-                <!-- Отзыв 3 -->
                 <div class="review-card">
-                    <div class="review-header">
-                        <span class="review-id">#03</span>
-                        <div class="stars">★★★★★</div>
-                    </div>
+                    <div class="review-header"><span class="review-id">#03</span><div class="stars">★★★★★</div></div>
                     <p class="review-text">«Сначала отнёсся скептически. Сейчас слишком много проектов с красивыми обещаниями. Поэтому смотрю не на громкие слова, а на саму подачу аналитики и то, насколько понятны аргументы. Это для меня важнее всего».</p>
                 </div>
-
-                <!-- Отзыв 4 -->
                 <div class="review-card">
-                    <div class="review-header">
-                        <span class="review-id">#04</span>
-                        <div class="stars">★★★★★</div>
-                    </div>
+                    <div class="review-header"><span class="review-id">#04</span><div class="stars">★★★★★</div></div>
                     <p class="review-text">«Ахренительная команда , спасибо) Мне интересна не сама рекомендация, а логика за ней. Такой формат мне ближе».</p>
                 </div>
-
-                <!-- Отзыв 5 -->
                 <div class="review-card">
-                    <div class="review-header">
-                        <span class="review-id">#05</span>
-                        <div class="stars">★★★★★</div>
-                    </div>
+                    <div class="review-header"><span class="review-id">#05</span><div class="stars">★★★★★</div></div>
                     <p class="review-text">«Нормальный продукт. Понятно, что спорт — не математика с гарантированным ответом. Но когда есть аргументированный разбор вместо пустых обещаний, это уже плюс».</p>
                 </div>
-
-                <!-- Отзыв 6 -->
                 <div class="review-card">
-                    <div class="review-header">
-                        <span class="review-id">#06</span>
-                        <div class="stars">★★★★★</div>
-                    </div>
+                    <div class="review-header"><span class="review-id">#06</span><div class="stars">★★★★★</div></div>
                     <p class="review-text">«Мне важно, чтобы никто не продавал иллюзию гарантированного результата. В спортивной аналитике всегда есть неопределённость. Поэтому больше доверия вызывает спокойная подача с объяснениями, а не обещания лёгких денег».</p>
                 </div>
-
-                <!-- Отзыв 7 -->
                 <div class="review-card">
-                    <div class="review-header">
-                        <span class="review-id">#07</span>
-                        <div class="stars">★★★★★</div>
-                    </div>
+                    <div class="review-header"><span class="review-id">#07</span><div class="stars">★★★★★</div></div>
                     <p class="review-text">«Постоянно ищу способы улучшить собственный подход к анализу событий. Для меня PRIDE LINE интересен именно как дополнительный аналитический инструмент. Буду смотреть на качество разборов и результаты на дистанции - сейчас доволен как слон))».</p>
                 </div>
             </div>
@@ -475,7 +186,6 @@
             const nextBtn = document.querySelector('.next');
             const dotsContainer = document.querySelector('.dots');
             
-            // Создаем точки навигации
             cards.forEach((_, index) => {
                 const dot = document.createElement('div');
                 dot.classList.add('dot');
@@ -489,40 +199,30 @@
             function updateDots() {
                 if (!cards.length) return;
                 const scrollLeft = carousel.scrollLeft;
-                const cardWidth = cards[0].offsetWidth + 20; // ширина + gap
+                const cardWidth = cards[0].offsetWidth + 20;
                 const activeIndex = Math.round(scrollLeft / cardWidth);
-                
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === activeIndex);
-                });
+                dots.forEach((dot, index) => dot.classList.toggle('active', index === activeIndex));
             }
             
             function scrollToCard(index) {
                 if (!cards[index]) return;
                 const cardWidth = cards[0].offsetWidth + 20;
-                carousel.scrollTo({
-                    left: cardWidth * index,
-                    behavior: 'smooth'
-                });
+                carousel.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
             }
             
-            if (prevBtn) {
-                prevBtn.addEventListener('click', () => {
-                    const currentScroll = carousel.scrollLeft;
-                    const cardWidth = cards[0].offsetWidth + 20;
-                    const newIndex = Math.max(0, Math.round(currentScroll / cardWidth) - 1);
-                    scrollToCard(newIndex);
-                });
-            }
+            if (prevBtn) prevBtn.addEventListener('click', () => {
+                const currentScroll = carousel.scrollLeft;
+                const cardWidth = cards[0].offsetWidth + 20;
+                const newIndex = Math.max(0, Math.round(currentScroll / cardWidth) - 1);
+                scrollToCard(newIndex);
+            });
             
-            if (nextBtn) {
-                nextBtn.addEventListener('click', () => {
-                    const currentScroll = carousel.scrollLeft;
-                    const cardWidth = cards[0].offsetWidth + 20;
-                    const newIndex = Math.min(cards.length - 1, Math.round(currentScroll / cardWidth) + 1);
-                    scrollToCard(newIndex);
-                });
-            }
+            if (nextBtn) nextBtn.addEventListener('click', () => {
+                const currentScroll = carousel.scrollLeft;
+                const cardWidth = cards[0].offsetWidth + 20;
+                const newIndex = Math.min(cards.length - 1, Math.round(currentScroll / cardWidth) + 1);
+                scrollToCard(newIndex);
+            });
             
             carousel.addEventListener('scroll', updateDots);
             window.addEventListener('resize', updateDots);
