@@ -23,7 +23,7 @@
     if (!menu || !burger) return;
     menuOpen = open;
     burger.setAttribute('aria-expanded', String(open));
-    burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+    burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Закрыть меню');
     if (open) {
       menu.hidden = false;
       document.body.style.overflow = 'hidden';
@@ -197,4 +197,30 @@
   };
   fix();
   document.addEventListener('DOMContentLoaded', fix);
+})();
+
+/* ---------- reviews: branded next-arrow ---------- */
+(function () {
+  var strip = document.querySelector('.reviews__carousel');
+  var next = document.querySelector('.reviews__next');
+  if (!strip || !next) { return; }
+  function stepPx() {
+    var card = strip.querySelector('.review-card');
+    if (!card) { return strip.clientWidth; }
+    var cs = getComputedStyle(strip);
+    var gap = parseFloat(cs.columnGap || cs.gap || '0') || 0;
+    return card.getBoundingClientRect().width + gap;
+  }
+  function update() {
+    var end = strip.scrollWidth - strip.clientWidth - 8;
+    next.classList.toggle('is-end', strip.scrollLeft >= end);
+  }
+  next.addEventListener('click', function () {
+    strip.scrollBy({ left: stepPx(), behavior: 'smooth' });
+  });
+  strip.addEventListener('scroll', function () {
+    window.requestAnimationFrame(update);
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
 })();
