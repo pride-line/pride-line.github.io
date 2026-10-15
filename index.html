@@ -18,6 +18,75 @@
 <link rel="preload" href="Manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css">
 <link rel="stylesheet" href="styles.css">
+<style>
+/* === БЛОК ОТЗЫВОВ (КАРУСЕЛЬ) === */
+.reviews { padding-top: 40px; }
+
+.reviews__carousel {
+  display: flex;
+  gap: var(--gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 20px 0 40px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.reviews__carousel::-webkit-scrollbar { display: none; }
+
+.review-card {
+  flex: 0 0 100%;
+  max-width: 100%;
+  min-height: 260px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .review-card { flex: 0 0 calc(50% - var(--gap)/2); max-width: calc(50% - var(--gap)/2); }
+}
+
+@media (min-width: 1024px) {
+  .review-card { flex: 0 0 calc(33.333% - var(--gap)*2/3); max-width: calc(33.333% - var(--gap)*2/3); }
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+}
+
+.review-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.review-id {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.stars { color: var(--gold); font-size: 1.1rem; letter-spacing: 2px; }
+
+.review-card__text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0;
+}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Перейти к содержимому</a>
@@ -508,6 +577,75 @@
       <a class="btn btn--gold btn--lg" href="https://t.me/PrideLine1GateBot" target="_blank" rel="noopener" data-track="cta_bot_ref">Получить личную ссылку в боте
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
       <p class="partners__note">Программа открыта каждому участнику сообщества с первого дня.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ОТЗЫВЫ УЧАСТНИКОВ ============ -->
+<section class="section reviews" id="reviews">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="eyebrow">08 · Сообщество</p>
+      <h2 class="section__title">Мнение участников</h2>
+      <p class="section__sub">Честные отзывы тех, кто уже оценил качество аналитики PRIDE LINE.</p>
+    </header>
+    
+    <div class="reviews__carousel">
+      <div class="review-card reveal">
+        <div class="review-card__header">
+          <span class="review-id">#01</span>
+          <div class="stars">★★★★★</div>
+        </div>
+        <p class="review-card__text">«Вот честно, уже надоело искать нормальную аналитику среди каналов, где каждый второй обещает золотые горы. Здесь хотя бы есть разбор, аргументы и понимание, откуда берётся вывод. Именно такого подхода мне и не хватало».</p>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-card__header">
+          <span class="review-id">#02</span>
+          <div class="stars">★★★★★</div>
+        </div>
+        <p class="review-card__text">«Ребята вы лучшие! Наконец-то не надо сидеть полвечера и собирать инфу по десяти местам 😅 Открыл разбор, посмотрел, что к чему, дальше уже сам думаешь. Для меня это удобно».</p>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-card__header">
+          <span class="review-id">#03</span>
+          <div class="stars">★★★★★</div>
+        </div>
+        <p class="review-card__text">«Сначала отнёсся скептически. Сейчас слишком много проектов с красивыми обещаниями. Поэтому смотрю не на громкие слова, а на саму подачу аналитики и то, насколько понятны аргументы. Это для меня важнее всего».</p>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-card__header">
+          <span class="review-id">#04</span>
+          <div class="stars">★★★★★</div>
+        </div>
+        <p class="review-card__text">«Ахренительная команда, спасибо) Мне интересна не сама рекомендация, а логика за ней. Такой формат мне ближе».</p>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-card__header">
+          <span class="review-id">#05</span>
+          <div class="stars">★★★★★</div>
+        </div>
+        <p class="review-card__text">«Нормальный продукт. Понятно, что спорт — не математика с гарантированным ответом. Но когда есть аргументированный разбор вместо пустых обещаний, это уже плюс».</p>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-card__header">
+          <span class="review-id">#06</span>
+          <div class="stars">★★★★★</div>
+        </div>
+        <p class="review-card__text">«Мне важно, чтобы никто не продавал иллюзию гарантированного результата. В спортивной аналитике всегда есть неопределённость. Поэтому больше доверия вызывает спокойная подача с объяснениями, а не обещания лёгких денег».</p>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-card__header">
+          <span class="review-id">#07</span>
+          <div class="stars">★★★★★</div>
+        </div>
+        <p class="review-card__text">«Постоянно ищу способы улучшить собственный подход к анализу событий. Для меня PRIDE LINE интересен именно как дополнительный аналитический инструмент. Буду смотреть на качество разборов и результаты на дистанции - сейчас доволен как слон))».</p>
+      </div>
     </div>
   </div>
 </section>
