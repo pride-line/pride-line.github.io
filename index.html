@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -35,6 +36,27 @@
 
 .reviews__carousel::-webkit-scrollbar { display: none; }
 
+.reviews__wrap { position: relative; }
+
+/* Брендированная стрелка-подсказка: золото PRIDE LINE, круг в стиле CTA.
+   Рабочая: тап прокручивает карусель на один отзыв. На десктопе скрыта. */
+.reviews__next {
+  position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+  width: 48px; height: 48px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(10, 10, 12, 0.82);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  cursor: pointer; z-index: 3;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.reviews__next:hover,
+.reviews__next:focus-visible { box-shadow: 0 0 0 3px rgba(212, 178, 102, 0.22); }
+.reviews__next svg { width: 22px; height: 22px; display: block; }
+.reviews__next.is-end { opacity: 0; pointer-events: none; transform: translateY(-50%) scale(0.9); }
+
 .review-card {
   flex: 0 0 100%;
   max-width: 100%;
@@ -58,10 +80,35 @@
 }
 
 @media (min-width: 1024px) {
-  .review-card { 
-    flex: 0 0 calc(33.333% - var(--gap)*2/3); 
-    max-width: calc(33.333% - var(--gap)*2/3); 
+  /* Десктоп: карусель выключена, отзывы — список сверху вниз из широких
+     горизонтальных карточек: номер и звёзды слева, текст справа. */
+  .reviews__carousel {
+    flex-direction: column;
+    overflow: visible;
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+    padding: 20px 0 8px;
   }
+  .review-card {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 28px 34px;
+  }
+  .review-card__top {
+    flex: 0 0 110px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+  .review-text { font-size: 1rem; }
+  .reviews__next { display: none; }
 }
 
 .review-card:hover {
@@ -601,6 +648,7 @@
       <p class="section__sub">Честные отзывы тех, кто уже оценил качество аналитики PRIDE LINE.</p>
     </header>
     
+    <div class="reviews__wrap">
     <div class="reviews__carousel">
       <article class="review-card reveal">
         <div class="review-card__top">
@@ -657,6 +705,11 @@
         </div>
         <p class="review-text">«Постоянно ищу способы улучшить собственный подход к анализу событий. Для меня PRIDE LINE интересен именно как дополнительный аналитический инструмент. Буду смотреть на качество разборов и результаты на дистанции - сейчас доволен как слон))».</p>
       </article>
+    </div>
+    <button class="reviews__next" type="button" aria-label="Показать следующий отзыв">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
     </div>
   </div>
 </section>
